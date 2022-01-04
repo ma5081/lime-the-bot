@@ -11,7 +11,7 @@ client = commands.Bot(command_prefix = ';')
 
 @client.event
 async def on_ready():
-    client.guilds
+    print("ready")
 
 @client.command()
 async def a(ctx, *, msg=""):
