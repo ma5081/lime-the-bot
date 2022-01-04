@@ -41,5 +41,5 @@ async def t(ctx, ser: discord.Guild, chann="",  *, msg=""):
                 return
     await ctx.send(f"to send an anonymous message, use ```;t {serv} <channel_name> <message>```make sure the channel name is written correctly (and exists in the given server)")
     return
-client.run("NzczNjMyOTkxMTc5MDQ2OTIy.X6MD3g.R5M7kvU_FY5MDEMa3QR50PKWbVo")
+client.run(TOKEN)
 outfile.close()
