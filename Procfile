@@ -1,1 +1,1 @@
-worker: python limeBot.py
+worker: python3 limeBot.py
