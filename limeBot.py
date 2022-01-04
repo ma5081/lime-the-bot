@@ -18,6 +18,7 @@ async def a(ctx, *, msg=""):
     await ctx.message.delete()
     if msg !="":
         await ctx.send(f"asking for a friend: {msg}")
+        print(f"{ctx.author}: {msg}\n")
     else:
         await ctx.send("to send an anonymous message, use ```;a <message>```")
 
@@ -30,7 +31,7 @@ async def t(ctx, ser: discord.Guild, chann="",  *, msg=""):
         if chan.name == chann:
             if msg !="":
                 if chan.permissions_for(ctx.author).send_messages:
-                    #outfile.write(f"{ctx.author} in {chann}: {msg}\n")
+                    print(f"{ctx.author} in {chann}: {msg}\n")
                     await chan.send(f"asking for a friend: {msg}")
                     await ctx.send("sent! stay bitter!")
                 else:
@@ -41,5 +42,5 @@ async def t(ctx, ser: discord.Guild, chann="",  *, msg=""):
                 return
     await ctx.send(f"to send an anonymous message, use ```;t {serv} <channel_name> <message>```make sure the channel name is written correctly (and exists in the given server)")
     return
-client.run(GETENV('TOKEN'))
+client.run(getenv('TOKEN'))
 #outfile.close()
