@@ -20,7 +20,7 @@ async def a(ctx, *, msg=""):
         await ctx.send(f"asking for a friend: {msg}")
         print(f"{ctx.author}: {msg}")
     else:
-        await ctx.send("to send an anonymous message, use ```;a <message>```")
+        await ctx.send("to send an anonymous message, use ```css\n;a [message]```")
 
 @client.command()
 async def i(ctx, ser: discord.Guild, chann="",  *, msg=""):
