@@ -18,7 +18,7 @@ async def a(ctx, *, msg=""):
     await ctx.message.delete()
     if msg !="":
         await ctx.send(f"asking for a friend: {msg}")
-        print(f"{ctx.author}: {msg}\n")
+        print(f"{ctx.author}: {msg}")
     else:
         await ctx.send("to send an anonymous message, use ```;a <message>```")
 
@@ -31,7 +31,7 @@ async def t(ctx, ser: discord.Guild, chann="",  *, msg=""):
         if chan.name == chann:
             if msg !="":
                 if chan.permissions_for(ctx.author).send_messages:
-                    print(f"{ctx.author} in {chann}: {msg}\n")
+                    print(f"{ctx.author} in {chann}: {msg}")
                     await chan.send(f"asking for a friend: {msg}")
                     await ctx.send("sent! stay bitter!")
                 else:
