@@ -7,6 +7,7 @@ from os import getenv
 
 intents = discord.Intents.default()
 intents.guilds = True
+intents.members = True
 client = commands.Bot(command_prefix = ';')
 
 @client.event
@@ -30,8 +31,7 @@ async def i(ctx, ser: discord.Guild, chann="",  *, msg=""):
     for chan in ser.text_channels:
         if chan.name == chann:
             if msg !="":
-                ident = ctx.message.author.id
-                if chan.permissions_for(ser.get_member(ident)).send_messages:
+                if chan.permissions_for(ser.get_member(ctx.author.id)).send_messages:
                     print(f"{ctx.author} in {chann}: {msg}")
                     await chan.send(f"asking for a friend: {msg}")
                     await ctx.send("sent! stay bitter!")
