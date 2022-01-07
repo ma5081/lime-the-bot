@@ -30,7 +30,8 @@ async def i(ctx, ser: discord.Guild, chann="",  *, msg=""):
     for chan in ser.text_channels:
         if chan.name == chann:
             if msg !="":
-                if chan.permissions_for(ser.get_member(ctx.author)).send_messages:
+                ident = ctx.author.id
+                if chan.permissions_for(ser.get_member(ident)).send_messages:
                     print(f"{ctx.author} in {chann}: {msg}")
                     await chan.send(f"asking for a friend: {msg}")
                     await ctx.send("sent! stay bitter!")
